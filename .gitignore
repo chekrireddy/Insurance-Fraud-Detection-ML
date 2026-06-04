@@ -42,6 +42,10 @@ MANIFEST
 .env.local
 .env.*.local
 
+# Local-only GitHub helper scripts
+push_to_github.py
+push_with_token.py
+
 # Jupyter Notebook
 .ipynb_checkpoints
 .jupyter
