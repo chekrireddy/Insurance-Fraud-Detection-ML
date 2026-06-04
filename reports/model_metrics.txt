@@ -1,0 +1,21 @@
+==================================================
+MODEL COMPARISON
+==================================================
+              Model Accuracy Precision Recall     F1 ROC_AUC
+      Random Forest   0.9860    0.9565 0.9821 0.9692  0.9988
+            XGBoost   0.9910    0.9654 0.9955 0.9802  0.9986
+Logistic Regression   0.8100    0.5475 0.8750 0.6735  0.9118
+
+==================================================
+BEST MODEL: Random Forest
+ROC AUC: 0.9988
+==================================================
+
+Best Model Confusion Matrix:
+[[766  10]
+ [  4 220]]
+
+Metric Selection Note:
+ROC AUC is used as the primary model selection metric because fraud
+detection is an imbalanced classification problem. Accuracy alone can
+hide poor minority-class performance.
