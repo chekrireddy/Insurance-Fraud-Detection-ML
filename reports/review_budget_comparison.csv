@@ -1,0 +1,3 @@
+model,claims_reviewed,fraud_caught,false_alarms,precision,recall
+Logistic Regression,82,14,68,0.17073170731707318,0.2545454545454545
+Random Forest,82,15,67,0.18292682926829268,0.2727272727272727
