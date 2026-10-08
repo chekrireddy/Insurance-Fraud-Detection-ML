@@ -86,3 +86,35 @@ ROC AUC: 0.9988
 ## Next Phase
 
 Phase 4 will add an inference pipeline for scoring new insurance claims with the saved model.
+
+## Learning baseline — work in progress
+
+This branch adds a personal learning project using 5,000 synthetic claims.
+The scripts below use a different schema from the earlier pipeline above;
+run them in order and do not mix the two pipelines. The current requirements
+file supports the learning baseline; legacy XGBoost/MLflow scripts need their
+original dependencies. Existing historical reports describe the earlier model.
+
+```powershell
+python -m pip install -r requirements.txt
+python src/generate_data.py
+python src/check_data.py
+python src/split_data.py
+python src/train_baseline.py
+python src/check_thresholds.py
+```
+
+Chronological splitting with a 30-day outcome delay produces 2,820 training,
+820 validation, and 1,000 test claims. Another 360 claims are excluded at
+split boundaries because their labels would not yet be available.
+
+The baseline script currently uses a 0.50 threshold: validation precision
+0.200, recall 0.018, F1 0.033, and average precision 0.160.
+Threshold comparison found that 0.10 had the highest validation F1 among
+six tested thresholds: precision 0.146, recall 0.473, F1 0.223.
+That comparison does not automatically change the saved model threshold.
+These results were obtained in the local learning run. The test set remains
+unused for model evaluation. Results are synthetic, not GEICO business results.
+
+Generated datasets and models are ignored for new files. Historical data and
+model files already tracked in Git remain tracked; .gitignore does not remove them.

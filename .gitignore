@@ -1,77 +1,26 @@
-# Virtual Environment
+# Python environment and temporary files
+.venv/
 venv/
-env/
-ENV/
-.venv
-
-# Python
 __pycache__/
 *.py[cod]
-*$py.class
-*.so
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-pip-wheel-metadata/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
+.pytest_cache/
 
-# PyCharm
-.idea/
-*.iml
-
-# VS Code
-.vscode/
-*.code-workspace
-
-# Environment variables
+# Secrets
 .env
-.env.local
-.env.*.local
+.env.*
+!.env.example
 
-# Local-only GitHub helper scripts
+# Generated data and models
+/data/
+/models/
+
+# Experiment tracking
+mlruns/
+mlartifacts/
+*.db
+# Local helper scripts and editor files
 push_to_github.py
 push_with_token.py
-
-# Jupyter Notebook
-.ipynb_checkpoints
-.jupyter
-
-# IPython
-profile_default/
-ipython_config.py
-
-# MLflow
-mlruns/
-.mlflow
-
-# Logs
+.vscode/
+.ipynb_checkpoints/
 *.log
-*.txt
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Temp files
-*.tmp
-*.temp
-*~
-
-# Output files
-output.log
-eda_output.txt
-eda_full_output.txt
